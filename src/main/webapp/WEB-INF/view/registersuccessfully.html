@@ -1,0 +1,34 @@
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Register</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<body style="background: linear-gradient(to bottom, #0e0a2d, #5e56b1, #24243e)"/>-->
+<!--<div align="center">-->
+<!--    <h1 style="margin: 320px">User successfully registered!</h1>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<body style="background-color: #6d44b8"/>
+<div style="margin: 280px"; align="centre">
+    <h1>User successfully registered!!</h1>
+    <form action="/login" th:method="POST">
+        <div class="container-login100-form-btn">
+            <button type="submit" value="Login" class="login100-form-btn">
+                <b style="" th:text="@{Login page}"></b>
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

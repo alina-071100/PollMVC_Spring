@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <form action="/register" th:method="POST"/>
+
+    <title>User Register</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{../../static/css/style.css}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap}" rel="stylesheet">
+</head>
+<!--<div>-->
+
+<!--    <span th:text="#{lang.change}+' &ndash;&gt; '"></span>-->
+<!--    <a class="txt2" href="/?lang=en-US" th:text="#{language.en}+', '"></a>-->
+<!--    <a class="txt2" href="/?lang=hy-AM" th:text="#{language.arm}+', '"></a>-->
+<!--    <a class="txt2" href="/?lang=ru-RU" th:text="#{language.ru}"></a>-->
+<!--</div>-->
+<body>
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+        <form>
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="first_name" placeholder="First name" required="">
+            <input type="text" name="last_name" placeholder="Last name" required="">
+            <input type="text" name="username" placeholder="User name" required="">
+            <input type="password" name="password" placeholder="Password" required="">
+            <input type="text" name="address"  placeholder="Address" required="">
+            <input type="text" name="email" placeholder="Email" required="">
+            <button>Sign up</button>
+        </form>
+    </div>
+    <div class="login">
+        <form action="/login" th:method="POST">
+            <div th:if="${logout}!= null" style="color: #a81bb2; font-size: 20px">
+                <p style="color: #57b846" th:text="${logout}"> </p>
+            </div>
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="username" th:name="username" placeholder="Username" required="">
+                <input type="password" th:name="password" placeholder="Password" required="">
+                <button>Login</button>
+            </form>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+

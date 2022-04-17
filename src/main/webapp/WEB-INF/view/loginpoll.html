@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+<body style="background-color: #8070ab"/>
+
+<h1>Выберете опрос</h1>
+<ul>
+    <li th:each="poll : ${polls}">
+        <a style="color: #dccdea" th:href="@{/questions/{id}(id=${poll.getId()})}" th:text="${poll.getName()}" class="title">poll</a>
+<!--        <div><span th:text="${poll.name}"></span>-->
+            <p class="description" th:text="${poll.getDescription()}">value</p>
+    </li>
+</ul>
+
+</body>
+</html>

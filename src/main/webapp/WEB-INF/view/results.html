@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Results</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <h2 class="title" th:text="@{Result}">:</h2>
+
+        <div th:if="${poll_error} != null">
+            <p style="font-size: 25px; color: #861aea; margin-top: -410px;
+    padding-left: 700px; display: inline-block;
+    align-items: center" th:text="${poll_error} + ${poll_result.getPoll_result()}"> <br>
+            </p>
+        </div>
+        <p class="description" th:text="'Result-' + ${userResult.getPoll_result()}"> <p/>
+
+        <form action="/logout" th:method="POST" class="login100-form">
+            <div class="container-login100-form-btn">
+                <button type="submit"  value="Log out" class="login100-form-btn" >
+                    <b th:text="@{logout}"></b>
+                </button>
+            </div>
+        </form>
+
+
+<!--        <p class="description" th:text ="${weight.getExplanation()}"></p>-->
+<!--        <form action=" request.getContextPath()/poll" method="get" class="login100-form validate-form">-->
+<!--            <div class="container-login100-form-btn">-->
+<!--                <button type="submit" value="Poll" class="login100-form-btn">-->
+<!--                    Poll-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--        <form action="/logout" th:method="GET" class="login100-form validate-form">-->
+<!--            <div class="container-login100-form-btn">-->
+<!--                <button type="submit" value="Poll" class="login100-form-btn">-->
+<!--                    Log out-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </form>-->
+    </div>
+</div>
+</body>
+</html>
